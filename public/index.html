@@ -1,23 +1,46 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Mastermind</title>
-    <link rel='stylesheet' href='/css/style.css' />
-    <script src='/lib/axios.min.js'></script>
-    <script src='/js/skrypt.js'></script>
-  </head>
-  <body>
-    <div id="ui">
-      <p>
-        Tutaj znajdzie się interfejs użytkownika gry.
-        Do obsługi odwołań do serwera należy wykorzystać bibliotekę
-        <a href="https://github.com/axios/axios" target="_blank">axios</a>.
-        Zwróć uwagę na to, że narzędzie to zwraca <em>promesy</em>!
-      </p>
-      <p>
-        Interfejs powinien działać bez „przeładowywania strony”. Do jego obsługi
-        należy wykorzystać wyłącznie standardowe metody DOM API.
-      </p>
+
+<head>
+  <title>Mastermind</title>
+  <link rel='stylesheet' href='/css/style.css' />
+  <script src='/lib/axios.min.js'></script>
+  <script src='/js/skrypt.js'></script>
+</head>
+
+<body>
+  <div id="ui">
+    <div id="top">
+      <div id="newgame">
+        <div id="form-container">
+          <label for="size">Rozmiar:</label><br>
+          <input type="number" id="size" name="size" value="5" min="1" max="30"><br>
+          <label for="dim">Trudność:</label><br>
+          <input type="number" id="dim" name="dim" value="9" min="2" max="9"><br>
+          <label for="max">Limit:</label><br>
+          <input type="number" id="max" name="max" value="0" min="0" max="99"><br><br>
+          <button id="new-game" onclick="newGame()">Nowa Gra</button>
+        </div>
+      </div>
+      <div id="currentgame">
+        <div id="scores">
+          <div>
+            <h2>Wynik Czarne: <span id="black-score">#</span></h2>
+            <h2>Wynik Białe: <span id="white-score">#</span></h2>
+          </div>
+          <div>
+            <h2>Pozostało: <span id="unrated">#</span></h2>
+            <h2>Próby: <span id="tries-left">#</span></h2>
+          </div>
+        </div>
+        <div id="guess-container">
+          <input type="number" id="guess" name="guess" placeholder="???" min="0" value="0">
+          <button id="guess-btn" onclick="guess()">Spróbuj</button></div>
+      </div>
     </div>
-  </body>
+    <div id="log">
+    </div>
+  </div>
+</body>
+
 </html>

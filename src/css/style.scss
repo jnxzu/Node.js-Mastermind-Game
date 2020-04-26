@@ -1,14 +1,88 @@
 $main-font: Consolas, Helvetica, Arial, sans-serif;
 
 body {
-    padding: 50px;
-    font-family: $main-font;
-    font-size: 16px;
-    background-color: azure;
+  font-family: $main-font;
+  font-size: 20px;
+  margin: 0;
+  height: 100vh;
+  width: 100vw;
+  overflow-x: hidden;
+}
+
+button {
+  background: rgb(255, 250, 240);
+  cursor: pointer;
 }
 
 #ui {
-    a {
-        color: #00B7FF;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  #top {
+    display: flex;
+    height: 30%;
+    #newgame {
+      flex-grow: 1;
+      #form-container {
+        margin: 3vmin auto;
+        max-width: 20%;
+        min-width: 250px;
+        text-align: center;
+        input {
+          font-size: 20px;
+          width: 100px;
+        }
+        button {
+          width: 170px;
+          height: 50px;
+          font-size: 20px;
+        }
+      }
     }
+    #currentgame {
+      width: 80%;
+      display: flex;
+      flex-direction: column;
+      #scores {
+        display: flex;
+        flex-grow: 1;
+        div {
+          flex-grow: 1;
+          text-align: center;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+        }
+      }
+      #guess-container {
+        height: 20%;
+        text-align: center;
+        input {
+          font-size: 20px;
+        }
+        button {
+          width: 120px;
+          height: 30px;
+          font-size: 20px;
+        }
+      }
+    }
+  }
+  #log {
+    flex-grow: 1;
+    max-height: 70%;
+    overflow-y: auto;
+    .log-item {
+      display: flex;
+      margin: 2vmin 5vmin;
+      div {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+      }
+      div:nth-child(1) {
+        flex-grow: 1;
+      }
+    }
+  }
 }
