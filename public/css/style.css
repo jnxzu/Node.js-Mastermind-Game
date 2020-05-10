@@ -1,1 +1,91 @@
-body{font-family:Consolas,Helvetica,Arial,sans-serif;font-size:20px;margin:0;height:100vh;width:100vw;overflow-x:hidden}button{background:#fffaf0;cursor:pointer}#ui{display:flex;flex-direction:column;height:100%}#ui #top{display:flex;height:30%}#ui #top #newgame{flex-grow:1}#ui #top #newgame #form-container{margin:3vmin auto;max-width:20%;min-width:250px;text-align:center}#ui #top #newgame #form-container input{font-size:20px;width:100px}#ui #top #newgame #form-container button{width:170px;height:50px;font-size:20px}#ui #top #currentgame{width:80%;display:flex;flex-direction:column}#ui #top #currentgame #scores{display:flex;flex-grow:1}#ui #top #currentgame #scores div{flex-grow:1;text-align:center;display:flex;flex-direction:column;justify-content:center}#ui #top #currentgame #guess-container{height:20%;text-align:center}#ui #top #currentgame #guess-container input{font-size:20px}#ui #top #currentgame #guess-container button{width:120px;height:30px;font-size:20px}#ui #log{flex-grow:1;max-height:70%;overflow-y:auto}#ui #log .log-item{display:flex;margin:2vmin 5vmin}#ui #log .log-item div{display:flex;flex-direction:column;justify-content:center}#ui #log .log-item div:nth-child(1){flex-grow:1}
+body {
+  font-family: Consolas, Helvetica, Arial, sans-serif;
+  font-size: 20px;
+  margin: 0;
+  height: 100vh;
+  width: 100vw;
+  overflow-x: hidden;
+  padding: 2vmin;
+}
+button {
+  background: #fffaf0;
+  cursor: pointer;
+}
+#ui {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+#ui #top {
+  display: flex;
+  height: 30%;
+}
+#ui #top #newgame {
+  flex-grow: 1;
+}
+#ui #top #newgame #form-container {
+  margin: 3vmin auto;
+  max-width: 20%;
+  min-width: 250px;
+  text-align: center;
+}
+#ui #top #newgame #form-container input {
+  font-size: 20px;
+  width: 100px;
+}
+#ui #top #newgame #form-container button {
+  width: 170px;
+  height: 50px;
+  font-size: 20px;
+}
+#ui #top #currentgame {
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+}
+#ui #top #currentgame #scores {
+  display: flex;
+  flex-grow: 1;
+}
+#ui #top #currentgame #scores div {
+  flex-grow: 1;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+#ui #top #currentgame #guess-container {
+  height: 20%;
+  text-align: center;
+}
+#ui #top #currentgame #guess-container input {
+  font-size: 20px;
+}
+#ui #top #currentgame #guess-container button {
+  width: 120px;
+  height: 30px;
+  font-size: 20px;
+}
+#ui #log {
+  flex-grow: 1;
+  max-height: 70%;
+  overflow-y: auto;
+}
+#ui #log .log-item {
+  display: flex;
+  margin: 2vmin 5vmin;
+}
+#ui #log .log-item div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+#ui #log .log-item div:nth-child(1) {
+  flex-grow: 1;
+}
+.gh-win {
+  color: green;
+}
+.gh-loss {
+  color: red;
+}

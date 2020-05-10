@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Strona główna</title>
+    <link rel='stylesheet' href='public/css/style.css' />
+</head>
+
+<body>
+    <p>
+        <% if (isAuthenticated) { %>
+    <h2>Witaj <%= user.username %></h2>
+    <a href="/game">Graj</a><br />
+    <a href="/logout">Wyloguj</a><br />
+    <h3>Twoje ostatnie gry: </h3>
+    <ul>
+        <% user.gamehistory.reverse().forEach((game)=>{%>
+        <li>
+            <% if (game.win) { %>
+            <span class="gh-win">WIN</span>
+            <%} else {%>
+            <span class="gh-loss">LOSS</span>
+            <% } %>
+            &emsp;Black: <%=game.black%> &emsp; White: <%=game.white%>
+        </li>
+        <%});%>
+    </ul>
+    <% } else { %>
+    <a href="/login">Login</a><br />
+    <a href="/register">Zarejestruj</a>
+    <% } %>
+    </p>
+</body>
+
+</html>

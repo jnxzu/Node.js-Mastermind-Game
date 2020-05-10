@@ -17,10 +17,14 @@ function guess() {
   var blackScore = parseInt(document.getElementById("black-score").innerHTML);
   var whiteScore = parseInt(document.getElementById("white-score").innerHTML);
   var remaining = parseInt(document.getElementById("unrated").innerHTML);
+  var movesleft = parseInt(document.getElementById("tries-left").innerHTML);
 
   axios
-    .patch("/mmind", {
+    .patch("/game", {
       guess: guess,
+      movesleft: movesleft,
+      black: blackScore,
+      white: whiteScore,
     })
     .then((resp) => {
       let black = resp.data.black;
@@ -73,13 +77,13 @@ function newGame() {
   document.getElementById("guess-btn").style.visibility = "visible";
 
   axios
-    .post("/mmind", {
+    .post("/game", {
       size: size,
       dim: dim,
       max: max,
     })
     .then((resp) => {
-      console.log("Odpowiedź serwera na POST /mmind:");
+      console.log("Odpowiedź serwera na POST /game:");
       console.dir(resp.data);
     });
   if (max == 0) {
