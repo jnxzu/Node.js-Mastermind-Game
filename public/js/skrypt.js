@@ -67,7 +67,7 @@ function newGame() {
   var max = parseInt(document.getElementById("max").value);
 
   var maxguess = dim;
-  for (let i = 1; i < size; i++) {
+  for (let i = 1; i < size; i += 1) {
     maxguess *= 10;
     maxguess += dim;
   }

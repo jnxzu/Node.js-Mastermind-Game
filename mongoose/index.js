@@ -1,6 +1,6 @@
-const mongoose = require("mongoose");
+const mongoose = require('mongoose');
 
-mongoose.set("useFindAndModify", false);
+mongoose.set('useFindAndModify', false);
 
 (async () => {
   try {
@@ -17,10 +17,10 @@ mongoose.set("useFindAndModify", false);
 
 const db = mongoose.connection;
 
-db.on("open", () => {
-  console.log("Połączono z MongoDB!");
+db.on('open', () => {
+  console.log('Połączono z MongoDB!');
 });
 
-db.on("error", console.error.bind(console, "Błąd połączenia z MongoDb: "));
+db.on('error', console.error.bind(console, 'Błąd połączenia z MongoDb: '));
 
 module.exports = mongoose;
